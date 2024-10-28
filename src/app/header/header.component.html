@@ -1,0 +1,53 @@
+
+   <div class="bg-gray-500 h-28 w-screen fixed z-20 drop-shadow-lg border rounded-lg flex flex-row pt-4">
+    <div class="z-20 p-5">
+        <button (click)="toggleSidebar()" class="text-white">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+    
+    
+     <!-- Title and Search Bar Section -->
+  <div class="flex flex-row ml-3 mt-4">
+    <h1 class="text-4xl text-white font-bold ml-2">Natna International Hotel</h1>
+    <!-- Search Bar -->
+    <div class="relative ml-5 mt-2">
+        <input type="text" placeholder="Search..." class="rounded-full py-2 px-4 pl-10 w-64 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button class="absolute right-5 top-3 text-gray-500">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M14.82 14.82A7 7 0 1118 10a7 7 0 01-3.18 4.82z"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+    <!-- Overlay for sidebar -->
+    <div *ngIf="isSidebarOpen" class="fixed inset-0 bg-gray-600 bg-opacity-50 z-30" (click)="toggleSidebar()"></div>
+
+    <!-- Sidebar -->
+    <div *ngIf="isSidebarOpen" class="fixed left-0 top-0 h-full w-64 bg-white shadow-lg z-40 p-4 transition-transform transform" style="transform: translateX(0);">
+        <div class="flex justify-between items-center">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <button (click)="toggleSidebar()" class="text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="flex flex-col mt-10 pl-5 h-screen bg-white text-lg">
+            <li class="py-2 "><a routerLink="/home" class="text-black hover:underline">Home</a></li>
+            <li class="py-2 "><a routerLink="/about" class="text-black hover:underline">About</a></li>
+            <li class="py-2 "><a routerLink="/services" class="text-black hover:underline">Services</a></li>
+            <li class="py-2 "><a routerLink="/contactus" class="text-black hover:underline">Contact</a></li>
+            <li class="py-2 "><a routerLink="/comments" class="text-black hover:underline">Comments</a></li>
+            <li class="py-2 "><a routerLink="/posts" class="text-black hover:underline">Posts</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Main Content Area -->
+<div [class]="isSidebarOpen ? 'ml-64' : 'ml-0'" class="transition-all duration-300">
+    <router-outlet></router-outlet> <!-- Assuming you use a router outlet for content -->
+</div>

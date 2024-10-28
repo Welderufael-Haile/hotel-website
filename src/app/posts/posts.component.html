@@ -1,0 +1,12 @@
+<p>posts works!</p>
+<!-- {{posts}} -->
+,<div class="pt-36 text-justify border rounded-md pl-10 ">
+    <h1 class="text-2xl ml-56 mb-2 border w-40 font-bold rounded-sm text-center">posts</h1>
+ <div  *ngFor="let post of posts" class="post">
+    <h3  class="border rounded-sm p-4 mb-2">User Id: {{ post.userid }}</h3>
+    <p  class="border rounded-sm p-4 mb-2"><strong>ID:</strong> {{ post.id }}</p>
+    <p  class="border rounded-sm p-4 mb-2"><strong>Title:</strong> {{ post.title }}</p>
+    <p  class="border rounded-sm p-4 mb-2"><strong>Body:</strong> {{ post.body }}</p>
+ </div>
+  
+</div>

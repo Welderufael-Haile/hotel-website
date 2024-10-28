@@ -1,0 +1,12 @@
+<!-- {{comments}}  -->
+<div class="pt-36 text-justify border rounded-md pl-10 ">
+    <h1 class="text-2xl ml-56 mb-2 border w-40 font-bold rounded-sm text-center">commemts</h1>
+    <div *ngFor="let comment of comments" class="comment">
+        <h3 class="border rounded-sm p-4 mb-2">Comment ID: {{ comment.id }}</h3>
+        <p class="border rounded-sm p-4 mb-2"><strong>Name:</strong> {{ comment.name }}</p>
+        <p class="border rounded-sm p-4 mb-2"><strong>Email:</strong> {{ comment.email }}</p>
+        <p class="border rounded-sm p-4 mb-2"><strong>Comment:</strong> {{ comment.body }}</p>
+        <p class="border rounded-sm p-4 mb-2"><strong>Post ID:</strong> {{ comment.postid }}</p>
+      </div>
+      
+</div>
